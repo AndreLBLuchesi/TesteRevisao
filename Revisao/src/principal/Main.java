@@ -17,6 +17,7 @@ import util.DialogBoxUtils;
 public class Main {
     
     public static void main(String[] args) {
+        gerarCadastrosDeTeste();
         int op;
         do {
             op = MenuCadastro.selecionarOpcaoMenuPrincipal();

@@ -31,7 +31,7 @@ public class CadastroAluno {
                 case 4 ->
                     remover();
                 case 5 ->
-                    menuListar();
+                    listar();
                 case 0 ->
                     System.out.println("\nRetornando ao menu principal...");
                 default ->
@@ -172,11 +172,16 @@ public class CadastroAluno {
     }
 
     public static void listar(ArrayList<Aluno> listaAlunos) {
-        System.out.println("\nAlunos: ");
+        if (listaAlunos.isEmpty()) {
+            System.out.println("Lista vazia!");
+            return;
+        }
+        System.out.println("\n--------Lista de Alunos---------");
 
         for (Aluno listaAluno : listaAlunos) {
             listaAluno.exibirInformacoes();
         }
+        System.out.println("Total de registros: "+listaAlunos.size()+"\n");
     }
 
     public static int menuListar() {

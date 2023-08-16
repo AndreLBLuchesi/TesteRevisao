@@ -27,7 +27,7 @@ public class CadastroFuncionario {
                 case 4 ->
                     remover();
                 case 5 ->
-                    menuListar();
+                    listar();
                 case 0 ->
                     System.out.println("\nRetornando ao menu principal...");
                 default ->
