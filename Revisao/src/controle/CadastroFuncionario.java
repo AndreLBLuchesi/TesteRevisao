@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import util.DialogBoxUtils;
 
-public class ControleFuncionario {
+public class CadastroFuncionario {
     private static ArrayList<Funcionario> listaFuncionarios = new ArrayList<>();
 
     public static ArrayList<Funcionario> getListaFuncionarios() {
@@ -14,7 +14,7 @@ public class ControleFuncionario {
     }
     
     public static void menuControleFuncionario(){
-        int op = ControleMenuCadastro.selecionarOpcaoMenuCadastro("Funcionários");
+        int op = MenuCadastro.selecionarOpcaoMenuCadastro("Funcionários");
         do {
 
             switch (op) {
@@ -37,7 +37,7 @@ public class ControleFuncionario {
     }
     
     public static void setarDados(Funcionario fun){
-        ControlePessoa.setarDados(fun);
+        CadastroPessoa.setarDados(fun);
         System.out.print("CTPS: ");
         fun.setCtps(Input.nextLine());
         System.out.print("Salário: ");

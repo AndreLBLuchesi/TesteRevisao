@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import util.DialogBoxUtils;
 
-public class ControleProfessor {
+public class CadastroProfessor {
     protected static ArrayList<Professor> listaProfessores = new ArrayList<>();
 
     public static ArrayList<Professor> getListaProfessores() {
@@ -14,7 +14,7 @@ public class ControleProfessor {
     }
     
     public static void menuControleProfessor(){
-        int op = ControleMenuCadastro.selecionarOpcaoMenuCadastro("Professores");
+        int op = MenuCadastro.selecionarOpcaoMenuCadastro("Professores");
         do {
 
             switch (op) {
@@ -37,7 +37,7 @@ public class ControleProfessor {
     }
     
     public static void setarDados(Professor prof){
-        ControleFuncionario.setarDados(prof);
+        CadastroFuncionario.setarDados(prof);
         System.out.print("Formação: ");
         prof.setFormacao(Input.nextLine());
     }

@@ -1,6 +1,6 @@
 package modelo;
 
-import controle.ControleAluno;
+import controle.CadastroAluno;
 
 
 
@@ -55,7 +55,7 @@ public class Curso {
     public int qtdAlunosCurso() {
         int contAlunos = 0;
 
-        for (Aluno al : ControleAluno.listaAlunos) {
+        for (Aluno al : CadastroAluno.getListaAlunos()) {
             if (al.getSituacao().equals("Em andamento") && this.equals(al.getCurso())) {
                 contAlunos++;
             }

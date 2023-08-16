@@ -1,11 +1,21 @@
 package modelo;
 
+import java.time.LocalDate;
+
 public class Funcionario extends Pessoa{
     protected String ctps;
     protected double salario;
 
     public Funcionario() {
     }
+
+    public Funcionario(String ctps, double salario, String nome, String cpf, LocalDate dataNascimento, Endereco endereco) {
+        super(nome, cpf, dataNascimento, endereco);
+        this.ctps = ctps;
+        this.salario = salario;
+    }
+    
+    
 
     public String getCtps() {
         return ctps;

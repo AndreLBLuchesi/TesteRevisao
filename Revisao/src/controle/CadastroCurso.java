@@ -5,7 +5,7 @@ import util.Input;
 import java.util.ArrayList;
 import util.DialogBoxUtils;
 
-public class ControleCurso {
+public class CadastroCurso {
     private static ArrayList<Curso> listaCursos = new ArrayList<>();
 
     public static ArrayList<Curso> getListaCursos() {
@@ -13,7 +13,7 @@ public class ControleCurso {
     }
     
     public static void menuControleCurso(){
-        int op = ControleMenuCadastro.selecionarOpcaoMenuCadastro("Cursos");
+        int op = MenuCadastro.selecionarOpcaoMenuCadastro("Cursos");
         do {
 
             switch (op) {

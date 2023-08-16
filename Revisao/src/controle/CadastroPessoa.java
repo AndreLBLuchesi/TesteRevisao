@@ -6,12 +6,12 @@ import modelo.Pessoa;
 import util.DialogBoxUtils;
 import util.Input;
 
-public class ControlePessoa {
+public class CadastroPessoa {
 
     protected static ArrayList<Pessoa> listaPessoas = new ArrayList<>();
 
     public static void menuControlePessoa() {
-        int op = ControleMenuCadastro.selecionarOpcaoMenuCadastro("Pessoas");
+        int op = MenuCadastro.selecionarOpcaoMenuCadastro("Pessoas");
         do {
             switch (op) {
                 case 1 ->
@@ -64,7 +64,7 @@ public class ControlePessoa {
         pessoa.setCpf(Input.nextLine());
         System.out.print("Data de nascimento: ");
         pessoa.setDataNascimento(Input.nextLocalDate());
-        pessoa.setEndereco(ControleEndereco.setarDadosEndereco());
+        pessoa.setEndereco(CadastroEndereco.setarDadosEndereco());
     }
 
     public static Pessoa pesquisa(ArrayList<Pessoa> listaPessoas) {

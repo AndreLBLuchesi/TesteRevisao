@@ -6,7 +6,7 @@ import util.Input;
  *
  * @author Andre
  */
-public class ControleMenuCadastro {
+public class MenuCadastro {
     
     public static void exibirMenuPrincipal(){
             System.out.println("\n######## Menu principal ########");

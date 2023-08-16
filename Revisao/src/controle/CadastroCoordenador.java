@@ -5,13 +5,18 @@ import util.Input;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import modelo.Curso;
 import util.DialogBoxUtils;
 
-public class ControleCoordenador {
+public class CadastroCoordenador {
     protected static ArrayList<Coordenador> listaCoordenadores = new ArrayList<>();
+
+    public static ArrayList<Coordenador> getListaCoordenadores() {
+        return listaCoordenadores;
+    }
     
     public static void menuControleCoordenador(){
-        int op = ControleMenuCadastro.selecionarOpcaoMenuCadastro("Coordenador");
+        int op = MenuCadastro.selecionarOpcaoMenuCadastro("Coordenador");
         do {
 
             switch (op) {
@@ -34,9 +39,14 @@ public class ControleCoordenador {
     }
     
     public static void setarDados(Coordenador coord){
-        ControleProfessor.setarDados(coord);
-        System.out.print("Formação: ");
-        coord.setFormacao(Input.nextLine());
+        CadastroProfessor.setarDados(coord);
+        Curso curso = CadastroCurso.pesquisa();
+        if(curso == null){
+            DialogBoxUtils.exibirMensagem("Curso não encontrado", "Nenhum curso foi encontrado!");
+            return;
+        }
+        
+        curso.setCoordenador(coord);
     }
     
     public static void cadastrar() {
@@ -53,7 +63,7 @@ public class ControleCoordenador {
     public static void alterar() {
         Coordenador coord = pesquisa(listaCoordenadores);
         if (coord == null) {
-            DialogBoxUtils.exibirMensagem("Coordenador não encontrado", "Nenhum coordenador foi encontrada!");
+            DialogBoxUtils.exibirMensagem("Coordenador não encontrado", "Nenhum coordenador foi encontrado!");
             return;
         }
         try {

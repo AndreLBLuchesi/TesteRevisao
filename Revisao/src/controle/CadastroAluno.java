@@ -9,14 +9,18 @@ import java.util.ArrayList;
 import java.util.Collections;
 import util.DialogBoxUtils;
 
-public class ControleAluno {
+public class CadastroAluno {
 
-    public static ArrayList<Aluno> listaAlunos = new ArrayList<>();
+    private static ArrayList<Aluno> listaAlunos = new ArrayList<>();
+
+    public static ArrayList<Aluno> getListaAlunos() {
+        return listaAlunos;
+    }
 
     public static void menuControleAluno() {
         int op;
         do {
-            op = ControleMenuCadastro.selecionarOpcaoMenuCadastro("Alunos");
+            op = MenuCadastro.selecionarOpcaoMenuCadastro("Alunos");
             switch (op) {
                 case 1 ->
                     cadastrar();
@@ -48,7 +52,7 @@ public class ControleAluno {
     }
 
     public static void setarDados(Aluno aluno) {
-        ControlePessoa.setarDados(aluno);
+        CadastroPessoa.setarDados(aluno);
         System.out.print("RA: ");
         aluno.setRa(Input.nextLine());
         aluno.setDataMatricula(LocalDate.now());
@@ -57,7 +61,7 @@ public class ControleAluno {
         if (op == 0) {
             Curso cursoPesquisa;
             do {
-                cursoPesquisa = ControleCurso.pesquisa();
+                cursoPesquisa = CadastroCurso.pesquisa();
 
                 if (cursoPesquisa == null) {
                     if (DialogBoxUtils.exibirCaixaConfirmacao("Curso não encontrado!", "Curso não encontrado! \nDeseja pesquisar novamente?") == 1) {

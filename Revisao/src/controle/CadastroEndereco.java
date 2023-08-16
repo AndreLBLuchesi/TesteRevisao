@@ -3,7 +3,7 @@ package controle;
 import modelo.Endereco;
 import util.Input;
 
-public class ControleEndereco {
+public class CadastroEndereco {
     protected static Endereco setarDadosEndereco(){
         Endereco end = new Endereco();
         System.out.print("Cidade: ");

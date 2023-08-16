@@ -10,8 +10,10 @@ public class Aluno extends Pessoa{
     protected Curso curso;
     protected LocalDate dataMatricula;
     protected String situacao;
+    
     public Aluno() {
     }
+    
     public Aluno(String nome, String cpf, LocalDate dataNascimento, Endereco endereco, String ra, Curso curso, LocalDate dataMatricula, String situacao) {
         super(nome, cpf, dataNascimento, endereco);
         this.ra = ra;
@@ -19,7 +21,6 @@ public class Aluno extends Pessoa{
         this.dataMatricula = dataMatricula;
         this.situacao = situacao;
     }
-
 
     public String getRa() {
         return ra;
